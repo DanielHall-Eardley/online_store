@@ -1,18 +1,33 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div id="home">
+    <Title title="Online Store"/>
+    <Cart></Cart>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+import Title from '@/components/Title.vue'
+import Cart from '@/components/Cart.vue'
 
 export default {
   name: 'home',
   components: {
-    HelloWorld
+    Title,
+    Cart,
   }
 }
 </script>
+
+<style>
+#home{
+  display:grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-rows: 12vh 15vh 45vh 30vh 20vh 15vh;
+}
+
+#title{
+  grid-column: 2/3;
+  grid-row: 1/2;
+}
+</style>
