@@ -1,14 +1,11 @@
 <template>
-  <div id="title">
-    <h1>{{Title}}</h1>
-  </div>
+  <h1 id="store-name">{{title}}</h1>
 </template>
 
 <script>
 export default {
-  name: 'title',
   props: {
-    Title: {
+    title: {
       type: String,
       required: true
     }
@@ -18,5 +15,10 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss">
-
+  #store-name{
+    grid-row: 1/2;
+    grid-column: 2/3;
+    text-align: center;
+  }
 </style>
+

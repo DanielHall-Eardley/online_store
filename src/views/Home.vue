@@ -1,19 +1,21 @@
 <template>
   <div id="home">
-    <Title title="Online Store"/>
-    <Cart></Cart>
+    <header id="header">
+      <StoreName title="Online Store"></StoreName>
+      <Cart></Cart>
+    </header>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import Title from '@/components/Title.vue'
+import StoreName from '@/components/StoreName.vue'
 import Cart from '@/components/Cart.vue'
 
 export default {
   name: 'home',
   components: {
-    Title,
+    StoreName,
     Cart,
   }
 }
@@ -21,13 +23,14 @@ export default {
 
 <style>
 #home{
-  display:grid;
-  grid-template-columns: 1fr 2fr 1fr;
-  grid-template-rows: 12vh 15vh 45vh 30vh 20vh 15vh;
+  
 }
 
-#title{
-  grid-column: 2/3;
-  grid-row: 1/2;
+#header{
+  display:grid;
+  grid-template-rows: 12vh;
+  grid-template-columns: 1fr 2fr 1fr;
+
 }
+
 </style>
