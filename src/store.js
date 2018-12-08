@@ -6,15 +6,16 @@ Vue.use(Vuex)
 export default new Vuex.Store({
   strict: true,
   state: {
-
-  },
-  getters:{
-
+    itemCount: 0,
   },
   mutations: {
-
+    addItem : state => {
+      state.itemCount += 1
+    },
   },
   actions: {
-
+    addItem: context =>{
+      context.commit("addItem")
+    },
   }
 })

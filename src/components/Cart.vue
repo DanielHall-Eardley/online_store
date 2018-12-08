@@ -7,9 +7,16 @@
 
 <script>
   export default{
-  data:{
-      itemCount: 0
-  } 
+    computed:{
+      itemCount: function(){
+        return this.$store.state.itemCount
+      }
+    },
+    methods: {
+      addItem: function(){
+        this.$store.dispatch("addItem")
+      }
+    }
   }
 </script>
 
