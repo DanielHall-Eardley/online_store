@@ -9,7 +9,7 @@
   export default{
     computed:{
       itemCount: function(){
-        return this.$store.state.itemCount
+        return this.$store.state.customer.itemCount
       }
     },
     methods: {
