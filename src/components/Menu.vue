@@ -22,8 +22,6 @@
 </template>
 
 <script>
-import Input from "@/components/Input.vue"
-
   export default{
     computed: {
       menus: function(){

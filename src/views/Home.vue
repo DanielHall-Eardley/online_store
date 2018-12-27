@@ -5,8 +5,11 @@
       <Cart></Cart>
       <Login></Login>
       <Menu></Menu>
-      <Input></Input>
+      <FindProduct></FindProduct>
     </header>
+    <main id="main-body">
+      <SlideShow></SlideShow>
+    </main>
   </div>
 </template>
 
@@ -14,18 +17,20 @@
 // @ is an alias to /src
 import StoreName from '@/components/StoreName.vue'
 import Cart from '@/components/Cart.vue'
-import Input from '@/components/Input.vue'
+import FindProduct from '@/components/FindProduct.vue'
 import Login from '@/components/Login.vue'
 import Menu from '@/components/Menu.vue'
+import SlideShow from '@/components/SlideShow.vue'
 
 export default {
   name: 'home',
   components: {
     StoreName,
     Cart,
-    Input,
+    FindProduct,
     Login,
-    Menu
+    Menu,
+    SlideShow
   }
 }
 </script>
@@ -40,7 +45,10 @@ export default {
   grid-template-rows: 12vh 6vh;
   grid-template-columns: 1fr 2fr 1fr;
   background:cornsilk
-
 }
 
+#main-body{
+  display:block;
+  height: 50vh;
+}
 </style>

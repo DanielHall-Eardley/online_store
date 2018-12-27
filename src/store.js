@@ -27,7 +27,7 @@ export default new Vuex.Store({
           url: "url",
           product: "mustang"
         }
-      ],
+      ]
     },{
       category: "cars",
       toggle: false,
@@ -43,7 +43,7 @@ export default new Vuex.Store({
         }
       ],
     }
-    ]
+    ],
   },
   mutations: {
     addItem: state => {

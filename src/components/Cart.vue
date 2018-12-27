@@ -29,17 +29,17 @@
   }
 
   #cart-icon{
-     width:80px;
+     width:60px;
      z-index: 0;
      text-align: end; 
   }
 
   #item-count{
     position: absolute;
-    top: 20px;
-    right: 30px;
+    top: 14px;
+    right: 20px;
     color: orangered;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     z-index: 1;
   }
 </style>
