@@ -3,6 +3,7 @@
     <div>
       <h2>{{picTitle}}</h2>
       <img v-bind:href="url" alt="A slideshow of products"/>
+      
     </div>
   </transition>
 </template>
@@ -30,22 +31,19 @@ export default {
                 url:""
         }
     },
-    mounted: function (){
+    beforeMount: function slideShow(){
         let array = this.pictureArray
         let counter = 0
         let id;
-            if(counter < array.length){
             id = setInterval(()=>{
-                this.picTitle = array[counter].title
-                this.url = array[counter].url
-                counter++
-                console.log(id, counter, array.length)
-
+                if(counter < array.length){
+                    this.picTitle = array[counter].title
+                    this.url = array[counter].url
+                    counter++
+                }else if(counter >= array.length){
+                    clearInterval(id)
+                }
             }, 5000, array, counter)
-            }else if(counter >= array.length){
-                clearInterval(id)
-                console.log("cleared")
-            }
         }
     
 }
@@ -55,5 +53,6 @@ export default {
   div{
     height: 100%;
     width: 100%;
+    z-index: 0;
    }
 </style>
