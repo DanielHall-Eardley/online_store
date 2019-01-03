@@ -62,12 +62,10 @@
   .dropdown{
     background-color: lightsalmon;
     padding: 4%;
-    z-index: 1;
   }
   
   .dropdown-enter-active{
     animation: enter 0.5s ease;
-    z-index: 1;
   }
 
   @keyframes enter {
@@ -80,7 +78,6 @@
   }
   .dropdown-leave-active{
     animation: exit 0.5s ease;
-    z-index: 1;
   }
 
   @keyframes exit{

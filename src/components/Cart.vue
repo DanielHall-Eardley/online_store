@@ -1,7 +1,7 @@
 <template>
   <div id="cart">
     <span id="item-count">{{itemCount}}</span>
-    <img id="cart-icon" src="@/assets/open-cart.png" />
+    <img id="cart-icon" src="@/assets/open-cart.png"/>
   </div>
 </template>
 

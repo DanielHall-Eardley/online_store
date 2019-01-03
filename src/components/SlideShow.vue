@@ -1,11 +1,11 @@
 <template>
-  <transition>
-    <div>
-      <h2>{{picTitle}}</h2>
-      <img v-bind:href="url" alt="A slideshow of products"/>
-      
-    </div>
-  </transition>
+    <transition>
+        <div style="{backgroundImage: url(@/assets/gto.jpg)}">
+            <h2>{{picTitle}}</h2>
+            <button id="left-button">Left</button>
+            <button id=right-button>Right</button>
+        </div>
+    </transition>
 </template>
 
 <script>
@@ -15,23 +15,23 @@ export default {
             pictureArray:[
                 {
                     title:"stuff",
-                    url:""
+                    url:"blue-camaro.png"
                 },{
                     title:"things",
-                    url:""
+                    url:"charger.jpeg"
                 },{
                     title:"hellcat",
-                    url:""
+                    url:"chevelle.jpg" 
                 }, {
                     title:"monicas",
-                    url:""
+                    url:"gto.jpg"
                 }
             ],
                 picTitle:"",
                 url:""
         }
     },
-    beforeMount: function slideShow(){
+    beforeMount: function(){
         let array = this.pictureArray
         let counter = 0
         let id;
@@ -50,9 +50,14 @@ export default {
 </script>
 
 <style scoped>
-  div{
-    height: 100%;
-    width: 100%;
-    z-index: 0;
-   }
+    div{
+        height: 100%;
+        width: 100%;
+    }
+    h2{
+
+    }
+    img{
+        object-fit: cover;
+    }
 </style>
