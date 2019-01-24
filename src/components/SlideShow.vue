@@ -1,13 +1,15 @@
 <template>
     <transition>
-        <div id="slideshow-container" :style="{backgroundImage: `url(${url})`}">
-            <h2 id="pic-title">{{picTitle}}</h2>
+        <div id="slideshow-container" :style="{backgroundImage: `url(${pictureArray[counter].url})`}">
+            <h2 id="pic-title">{{pictureArray[counter].title}}</h2>
             <div id="slideshow-position">
-                <div v-bind:class="{highlighted: slideshowPosition(index)}" class="slideshow-indicator" v-for="(picture, index) in pictureArray">
+                <div v-bind:class="{highlighted: slideshowPosition(index)}" 
+                class="slideshow-indicator" 
+                v-for="(picture, index) in pictureArray">
                 </div>
             </div>
-            <button name="left" v-on:click="scrollFunction()" id="left-button">Left</button>
-            <button name="right" v-on:click="scrollFunction()" id=right-button>Right</button>
+            <button name="left" v-on:click="scrollFunction" id="left-button">Left</button>
+            <button name="right" v-on:click="scrollFunction" id=right-button>Right</button>
         </div>
     </transition>
 </template>
@@ -19,51 +21,57 @@ export default {
             pictureArray:[
                 {
                     title:"stuff",
-                    url:"blue-camaro.png"
+                    url: require("@/assets/blue-camaro.png")
                 },{
                     title:"things",
-                    url:"charger.jpeg"
+                    url: require("@/assets/charger.jpeg")
                 },{
                     title:"hellcat",
-                    url:"chevelle.jpg" 
+                    url: require("@/assets/chevelle.jpg") 
                 }, {
                     title:"monicas",
-                    url:"gto.jpg"
+                    url: require("@/assets/gto.jpg")
                 }
             ],
-                picTitle:"stuff",
-                url: require("@/assets/blue-camaro.png"),
-                counter: 1,
-
+            counter: 0,
         }
     },
-    beforeMount: function(){
-        let array = this.pictureArray
+    mounted: function(){
         let id = setInterval(()=>{
-                if(this.counter < array.length){
-                    this.picTitle = array[this.counter].title
-                    this.url = require(`@/assets/${array[this.counter].url}`)
-                    this.counter++
-                }else if(this.counter >= array.length){
-                    clearInterval(id)
-                }
-            }, 5000, array, this.counter)
-        },
+            console.log("firing")
+            if(this.counter < this.pictureArray.length - 1){
+                this.counter++  
+            }else if(this.counter >= this.pictureArray.length - 1){
+                clearInterval(id)
+            }
+            }, 5000, this.counter)
+    },
     methods:{
         slideshowPosition: function(index){
-           if(index + 1 === this.counter){
+            console.log(this.counter)
+            if(index  === this.counter){
                return true
-           }
-           else{
+            }else{
                return false
-           }
+            }
         },
         scrollFunction: function(e){
-            console.log(e.target.id)
             let array = this.pictureArray
-        }
-    }
-    
+            if(e.target.id === "left-button"){
+                if(this.counter <= 0){
+                    this.counter = array.length - 1
+                }else{
+                    this.counter = this.counter - 1
+                }    
+            }else if(e.target.id === "right-button"){
+                if(this.counter >= array.length - 1){
+                    this.counter = 0
+                }else{
+                    this.counter = this.counter + 1
+                }    
+            }                
+        },
+    },
 }
 </script>
 
