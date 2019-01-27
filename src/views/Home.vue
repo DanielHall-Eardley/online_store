@@ -10,6 +10,9 @@
     <main id="main-body">
       <SlideShow></SlideShow>
     </main>
+    <article id="store-description">
+      <StoreDescription></StoreDescription>
+    </article>
   </div>
 </template>
 
@@ -21,6 +24,7 @@ import FindProduct from '@/components/FindProduct.vue'
 import Login from '@/components/Login.vue'
 import Menu from '@/components/Menu.vue'
 import SlideShow from '@/components/SlideShow.vue'
+import StoreDescription from '@/components/StoreDescription.vue'
 
 export default {
   name: 'home',
@@ -30,7 +34,8 @@ export default {
     FindProduct,
     Login,
     Menu,
-    SlideShow
+    SlideShow,
+    StoreDescription
   }
 }
 </script>
