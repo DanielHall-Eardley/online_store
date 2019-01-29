@@ -38,7 +38,6 @@ export default {
     },
     mounted: function(){
         let id = setInterval(()=>{
-            console.log("firing")
             if(this.counter < this.pictureArray.length - 1){
                 this.counter++  
             }else if(this.counter >= this.pictureArray.length - 1){
@@ -48,7 +47,6 @@ export default {
     },
     methods:{
         slideshowPosition: function(index){
-            console.log(this.counter)
             if(index  === this.counter){
                return true
             }else{

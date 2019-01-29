@@ -44,6 +44,15 @@ export default new Vuex.Store({
       ],
     }
     ],
+    customProduct:{
+      name: "build your computer",
+      steps:[
+        {
+          options: []
+        }
+      ]
+    },
+    storeDescription: "This is my store full of goodies"
   },
   mutations: {
     addItem: state => {
@@ -63,6 +72,9 @@ export default new Vuex.Store({
     },
     toggleMenuAction: (context, event) => {
       context.commit("toggleMenu", event)
+    },
+    storeDescription: (context, payload)=>{
+      console.log('finish componenent')
     }
   }
 })

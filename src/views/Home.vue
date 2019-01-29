@@ -12,7 +12,11 @@
     </main>
     <article id="store-description">
       <StoreDescription></StoreDescription>
+      <router-link id="custom-product-link" to="/custom-products">{{customProductName}}</router-link>
     </article>
+    <footer id="footer">
+
+    </footer>
   </div>
 </template>
 
@@ -36,6 +40,11 @@ export default {
     Menu,
     SlideShow,
     StoreDescription
+  }, 
+  computed:{
+    customProductName(){
+      return this.$store.state.customProduct.name
+    }
   }
 }
 </script>
@@ -53,7 +62,26 @@ export default {
 }
 
 #main-body{
-  display:block;
+  display: block;
   height: 50vh;
+}
+
+#store-description{
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  background: lightgoldenrodyellow;
+}
+
+#custom-product-link{
+  padding: 16px;
+  background:chartreuse;
+  text-align: center;
+  width: 50%;
+  border-radius: 6px;
+}
+
+#footer{
+  width: 100%;
 }
 </style>
