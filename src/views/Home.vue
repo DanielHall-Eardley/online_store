@@ -15,7 +15,7 @@
       <router-link id="custom-product-link" to="/custom-products">{{customProductName}}</router-link>
     </article>
     <footer id="footer">
-
+      <Content></Content>
     </footer>
   </div>
 </template>
@@ -29,6 +29,7 @@ import Login from '@/components/Login.vue'
 import Menu from '@/components/Menu.vue'
 import SlideShow from '@/components/SlideShow.vue'
 import StoreDescription from '@/components/StoreDescription.vue'
+import Content from '@/components/Footer.vue'
 
 export default {
   name: 'home',
@@ -39,7 +40,8 @@ export default {
     Login,
     Menu,
     SlideShow,
-    StoreDescription
+    StoreDescription,
+    Content
   }, 
   computed:{
     customProductName(){

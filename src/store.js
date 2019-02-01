@@ -52,7 +52,11 @@ export default new Vuex.Store({
         }
       ]
     },
-    storeDescription: "This is my store full of goodies"
+    storeDescription: "This is my store full of goodies",
+    footerData:{
+      links:["message", "about", "ninjas"],
+      logos:[],
+    }
   },
   mutations: {
     addItem: state => {
