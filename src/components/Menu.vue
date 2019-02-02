@@ -25,7 +25,7 @@
   export default{
     computed: {
       menus: function(){
-        return this.$store.state.menus
+        return this.$store.state.shopConfig.menus
       }
     },
     methods: {

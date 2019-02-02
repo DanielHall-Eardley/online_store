@@ -9,7 +9,7 @@
   export default{
     computed: {
       customer:function(){
-      return this.$store.state.customer
+      return this.$store.state.customer.customer
       }
     },
     methods:{

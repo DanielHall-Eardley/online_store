@@ -6,7 +6,7 @@
 export default {
     computed:{
         storeDesc(){
-            return this.$store.state.storeDescription
+            return this.$store.state.shopConfig.storeDescription
         }
     },
     created: function getDescription(){

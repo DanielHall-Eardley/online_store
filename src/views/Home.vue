@@ -45,7 +45,7 @@ export default {
   }, 
   computed:{
     customProductName(){
-      return this.$store.state.customProduct.name
+      return this.$store.state.products.customProduct.name
     }
   }
 }
