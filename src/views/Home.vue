@@ -1,6 +1,6 @@
 <template>
   <div id="home">
-    <header id="header">
+    <header class="header">
       <StoreName title="Online Store"></StoreName>
       <Cart></Cart>
       <Login></Login>
@@ -14,7 +14,7 @@
       <StoreDescription></StoreDescription>
       <router-link id="custom-product-link" to="/custom-products">{{customProductName}}</router-link>
     </article>
-    <footer id="footer">
+    <footer class="footer">
       <Content></Content>
     </footer>
   </div>
@@ -56,7 +56,7 @@ export default {
   
 }
 
-#header{
+.header{
   display:grid;
   grid-template-rows: 12vh 6vh;
   grid-template-columns: 1fr 2fr 1fr;
@@ -83,7 +83,7 @@ export default {
   border-radius: 6px;
 }
 
-#footer{
+.footer{
   width: 100%;
 }
 </style>

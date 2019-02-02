@@ -62,6 +62,7 @@
   .dropdown{
     background-color: lightsalmon;
     padding: 4%;
+    z-index: 1
   }
   
   .dropdown-enter-active{

@@ -29,6 +29,10 @@
     grid-template-rows: minmax(15vh, auto) 10vh;
   }
   #custom-content-container{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
     grid-column: 1/2;
     grid-row: 1/3;
     padding: 15px;
@@ -46,8 +50,11 @@
     padding: 15px;
   }
   .link{
-    margin-bottom: 2px;
-    margin-top: 2px;
+    margin-bottom: 3px;
+    margin-top: 3px;
+  }
+  .logo-copyright{
+    margin: 0px 15px
   }
 </style>
 
