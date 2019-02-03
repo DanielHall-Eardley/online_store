@@ -7,6 +7,18 @@
       <Menu></Menu>
       <FindProduct></FindProduct>
     </header>
+    <main id="products-section"> 
+      <StoreName title="Categories"></StoreName>
+      <div id="product-list">
+        <div class="list-item">
+          <h3 class="item-title"></h3>
+          <p class="item-summary"></p>
+          <span class="item-price"></span>
+          <button class="item-buy"></button>
+          <img class=item-image/>
+        </div>
+      </div>  
+    </main>
     <footer class="footer">
       <Content></Content>
     </footer>
@@ -34,5 +46,10 @@ export default {
 </script>
 
 <style>
-
+  #products-section{
+    min-height: 50vh;
+    height: auto;
+    width: 100%;
+    background: lightgrey;
+  }
 </style>

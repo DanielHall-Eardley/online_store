@@ -8,9 +8,40 @@ let shopConfig = {
         },
         menus: [
             {
-                category: "cars",
+                category: "Menu",
                 toggle: false,
                 order: 1,
+                links: [
+                    {
+                        url: "/home",
+                        product: "Home"
+                    },
+                    {
+                        url: "/products",
+                        product: "Products"
+                    },
+                    {
+                        url: "/login",
+                        product: "Login",
+                    },
+                    {
+                        url: "/custom-product",
+                        product: "Custom Product",
+                    },
+                    {
+                        url: "/checkout",
+                        product: "Checkout",
+                    },
+                    {
+                        url: "/about",
+                        product: "About"
+                    }
+                ]
+            },
+            {
+                category: "cars",
+                toggle: false,
+                order: 2,
                 links: [
                     {
                         url: "url",
@@ -24,7 +55,7 @@ let shopConfig = {
             }, {
                 category: "cars",
                 toggle: false,
-                order: 2,
+                order: 3,
                 links: [
                     {
                         url: "url",

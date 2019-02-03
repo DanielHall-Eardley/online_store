@@ -1,6 +1,6 @@
 <template>
   <nav id="menu">
-    <div class="menu-container">
+    <div class="menu-container">  
       <div class="menu-title" v-bind:style="{order:menu.order}" v-for="(menu, index) in menus" v-bind:key="index">
         <button class="menu-button" 
           v-bind:id="index" 

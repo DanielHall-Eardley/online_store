@@ -7,6 +7,11 @@ let products = {
                     options: []
                 }
             ]
+        }, 
+        product: {
+            name: "Hellcat",
+            summary: "Dodge Charger with 707hp coming from a 6.2 supercharged Hemi",
+            price: 80000
         }
     },
     mutations: {

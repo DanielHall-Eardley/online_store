@@ -1,5 +1,38 @@
 <template>
-  <div class="about">
-    <h1>This is an custom product page</h1>
+  <div id="products">
+    <header class="header">
+      <StoreName title="Custom Product"></StoreName>
+      <Cart></Cart>
+      <Login></Login>
+      <Menu></Menu>
+      <FindProduct></FindProduct>
+    </header>
+    <footer class="footer">
+      <Content></Content>
+    </footer>
   </div>
 </template>
+
+<script>
+import StoreName from "@/components/StoreName.vue";
+import Cart from "@/components/Cart.vue";
+import FindProduct from "@/components/FindProduct.vue";
+import Login from "@/components/Login.vue";
+import Content from "@/components/Footer.vue";
+import Menu from "@/components/Menu.vue";
+
+export default {
+  components:{
+    StoreName,
+    Cart,
+    FindProduct,
+    Login,
+    Content,
+    Menu,
+  }
+};
+</script>
+
+<style>
+
+</style>

@@ -25,6 +25,21 @@ export default new Router({
       path: '/custom-products',
       name: 'custom-products',
       component: () => import('./views/CustomProduct.vue')
+    },
+    {
+      path: '/checkout',
+      name: 'checkout',
+      component: () => import('./views/Checkout.vue')
+    },
+    {
+      path: '/products',
+      name: 'products',
+      component: () => import('./views/Products.vue')
+    },
+    {
+      path: '/login',
+      name: 'login',
+      component: () => import('./views/LoginPage.vue')
     }
   ]
 })
