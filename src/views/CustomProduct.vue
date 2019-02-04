@@ -1,7 +1,9 @@
 <template>
   <div id="products">
     <header class="header">
-      <StoreName title="Custom Product"></StoreName>
+      <Title>
+        <h1>Custom Product</h1>
+      </Title>
       <Cart></Cart>
       <Login></Login>
       <Menu></Menu>
@@ -14,7 +16,7 @@
 </template>
 
 <script>
-import StoreName from "@/components/StoreName.vue";
+import Title from "@/components/Title.vue";
 import Cart from "@/components/Cart.vue";
 import FindProduct from "@/components/FindProduct.vue";
 import Login from "@/components/Login.vue";
@@ -23,7 +25,7 @@ import Menu from "@/components/Menu.vue";
 
 export default {
   components:{
-    StoreName,
+    Title,
     Cart,
     FindProduct,
     Login,

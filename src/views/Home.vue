@@ -1,7 +1,9 @@
 <template>
   <div id="home">
     <header class="header">
-      <StoreName title="Online Store"></StoreName>
+      <Title>
+        <h1>Online Store</h1>
+      </Title>
       <Cart></Cart>
       <Login></Login>
       <Menu></Menu>
@@ -22,7 +24,7 @@
 
 <script>
 // @ is an alias to /src
-import StoreName from '@/components/StoreName.vue'
+import Title from '@/components/Title.vue'
 import Cart from '@/components/Cart.vue'
 import FindProduct from '@/components/FindProduct.vue'
 import Login from '@/components/Login.vue'
@@ -34,7 +36,7 @@ import Content from '@/components/Footer.vue'
 export default {
   name: 'home',
   components: {
-    StoreName,
+    Title,
     Cart,
     FindProduct,
     Login,
