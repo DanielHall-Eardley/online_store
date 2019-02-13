@@ -1,46 +1,32 @@
 <template>
-    <transition>
-        <div id="slideshow-container" :style="{backgroundImage: `url(${pictureArray[counter].url})`}">
-            <h2 id="pic-title">{{pictureArray[counter].title}}</h2>
-            <div id="slideshow-position">
+        <div id="slideshowData-container" :style="{backgroundImage: `url(${slideshowData[counter].url})`}">
+            <h2 id="pic-title">{{slideshowData[counter].title}}</h2>
+            <div id="slideshowData-position">
                 <div v-bind:class="{highlighted: slideshowPosition(index)}" 
-                class="slideshow-indicator" 
-                v-for="(picture, index) in pictureArray">
+                class="slideshowData-indicator" 
+                v-for="(picture, index) in slideshowData">
                 </div>
             </div>
             <button name="left" v-on:click="scrollFunction" id="left-button">Left</button>
             <button name="right" v-on:click="scrollFunction" id=right-button>Right</button>
         </div>
-    </transition>
 </template>
 
 <script>
 export default {
     data: function(){
         return{
-            pictureArray:[
-                {
-                    title:"stuff",
-                    url: require("@/assets/blue-camaro.png")
-                },{
-                    title:"things",
-                    url: require("@/assets/charger.jpeg")
-                },{
-                    title:"hellcat",
-                    url: require("@/assets/chevelle.jpg") 
-                }, {
-                    title:"monicas",
-                    url: require("@/assets/gto.jpg")
-                }
-            ],
             counter: 0,
         }
     },
+    props:{
+      slideshowData: Array
+    },
     mounted: function(){
         let id = setInterval(()=>{
-            if(this.counter < this.pictureArray.length - 1){
+            if(this.counter < this.slideshowData.length - 1){
                 this.counter++  
-            }else if(this.counter >= this.pictureArray.length - 1){
+            }else if(this.counter >= this.slideshowData.length - 1){
                 clearInterval(id)
             }
             }, 5000, this.counter)
@@ -54,7 +40,7 @@ export default {
             }
         },
         scrollFunction: function(e){
-            let array = this.pictureArray
+            let array = this.slideshowData
             if(e.target.id === "left-button"){
                 if(this.counter <= 0){
                     this.counter = array.length - 1
@@ -74,7 +60,7 @@ export default {
 </script>
 
 <style>
-    #slideshow-container{
+    #slideshowData-container{
         height: 100%;
         width: 100%;
         background-size: 100%;
@@ -84,12 +70,12 @@ export default {
     #pic-title{
        text-align: center;
     }
-    #slideshow-position{
+    #slideshowData-position{
         display: flex;
         justify-content: center;
         height: 10%;
     }
-    .slideshow-indicator{
+    .slideshowData-indicator{
         width: 3%;
         height: 15%;
         background-color:aqua;

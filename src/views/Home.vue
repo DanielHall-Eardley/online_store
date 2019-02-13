@@ -1,6 +1,6 @@
 <template>
   <div id="home">
-    <header class="header">
+    <header>
       <Title>
         <h1>Online Store</h1>
       </Title>
@@ -10,7 +10,7 @@
       <FindProduct></FindProduct>
     </header>
     <main id="main-body">
-      <SlideShow></SlideShow>
+      <SlideShow v-bind:slideshowData="slideshowData"></SlideShow>
     </main>
     <article id="store-description">
       <StoreDescription></StoreDescription>
@@ -48,22 +48,26 @@ export default {
   computed:{
     customProductName(){
       return this.$store.state.products.customProduct.name
+    },
+    slideshowData(){
+      return this.$store.state.products.featuredSlideshow
     }
   }
 }
 </script>
 
-<style>
-#home{
-  
-}
-
-.header{
+<style lang="scss">
+@import '@/globalStyles/mixins.scss';
+header{
   display:grid;
   grid-template-rows: 12vh 6vh;
-  grid-template-columns: 1fr 2fr 1fr;
-  background:cornsilk
+  grid-template-columns: 1fr 2fr 1fr; 
+  @include mediaQ (600px){
+    grid-template-rows: 12vh 5vh 5vh  ;
+  }
 }
+
+
 
 #main-body{
   display: block;

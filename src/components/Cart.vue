@@ -21,6 +21,8 @@
 </script>
 
 <style lang="scss">
+
+
   #cart{
     grid-row: 1/2;
     grid-column: 3/4;

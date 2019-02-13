@@ -40,6 +40,11 @@ export default new Router({
       path: '/login',
       name: 'login',
       component: () => import('./views/LoginPage.vue')
+    },
+    {
+      path: '/details',
+      name: 'details',
+      component: ()=> import('./views/ProductDetails.vue')
     }
   ]
 })

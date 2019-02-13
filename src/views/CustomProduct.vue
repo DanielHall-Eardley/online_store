@@ -1,6 +1,6 @@
 <template>
   <div id="products">
-    <header class="header">
+    <header>
       <Title>
         <h1>Custom Product</h1>
       </Title>

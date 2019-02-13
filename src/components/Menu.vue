@@ -36,10 +36,15 @@
   }
 </script>
 
-<style>
+<style lang="scss">
+@import '@/globalStyles/mixins.scss';
+
   #menu{
     grid-column: 1/3;
     grid-row: 2/3;
+    @include mediaQ(600px){
+      grid-area: 2/1/3/4;
+    }
   }
  
   .menu-container{

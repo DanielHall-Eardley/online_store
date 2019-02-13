@@ -20,7 +20,8 @@
   }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
+
   div{
     grid-column: 1/2;
     grid-row: 1/2;
