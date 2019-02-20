@@ -63,7 +63,7 @@ export default {
     #slideshowData-container{
         height: 100%;
         width: 100%;
-        background-size: 100%;
+        background-size: cover;
         background-repeat: no-repeat;
         position: relative;
     }

@@ -31,13 +31,13 @@
     align-content: center;
     @include mediaQ(600px){
       grid-area: 3/1/4/4;
+      
     }
   }
   input{
-    margin: 2%;
     border: solid 0.5px black;
   }
   button{
-    margin: 2%;
+    
   }
 </style>

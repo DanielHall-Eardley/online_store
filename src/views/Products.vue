@@ -10,18 +10,16 @@
       <FindProduct></FindProduct>
     </header>
     <main id="products-section">
-      <Title>
-        <h2>Categories</h2>
-      </Title>
       <div id="product-list">
-        <div class="list-item" v-for="item in productData">
+        <div v-if="item.showDetails === false" class="list-item" v-for="item in productData">
           <h3>{{item.name}}</h3>
           <p>{{item.summary}}</p>
           <span>Price: ${{item.price}}</span>
           <button>Buy</button>
-          <img v-bind:src="item.imgArray">
-          <router-link to="/details" v-on:click="getDetails(item)">Details</router-link>
+          <img v-bind:src="item.imgArray[0]">
+          <button v-on:click="getDetail(item)">Details</button>
         </div>
+        <Details v-else-if="item.showDetails === true" v-bind:item="itemDetails"></Details>
       </div>
     </main>
     <footer class="footer">
@@ -37,6 +35,7 @@ import FindProduct from "@/components/FindProduct.vue";
 import Login from "@/components/Login.vue";
 import Content from "@/components/Footer.vue";
 import Menu from "@/components/Menu.vue";
+import Details from "@/components/ProductDetails.vue";
 
 export default {
   components: {
@@ -45,16 +44,23 @@ export default {
     FindProduct,
     Login,
     Content,
-    Menu
+    Menu,
+    Details
+  },
+  data() {
+    return {
+      itemDetails: {},
+    };
   },
   computed: {
     productData() {
       return this.$store.state.products.productData;
-    },
-    method:{
-      getDetails(item){
-        this.$store.dispatch('getDetails', payload)
-      }
+    }
+  },
+  methods: {
+    getDetail: function(item) {
+      this.itemDetails = item;
+      item.showDetails = !item.showDetails
     }
   }
 };
@@ -68,16 +74,13 @@ export default {
   height: 50vh;
   background: lightgrey;
   padding: 2%;
-}
-
-#product-list {
   overflow-y: scroll;
 }
 
 .list-item {
   display: grid;
   grid-template-columns: 1fr 1fr 0.5fr;
-  grid-template-rows: 40px 112px 20%;
+  grid-template-rows: 40px 60px 5vh;
   h3 {
     grid-area: 1/1/2/3;
     margin: $item-margin;
@@ -93,11 +96,16 @@ export default {
   }
   button {
     grid-area: 3/2/4/3;
+    @extend %button-shared;
+  }
+
+  %button-shared {
     margin: $item-margin;
     width: 50%;
     box-sizing: border-box;
     @include standard-button(lightblue, maroon);
   }
+
   img {
     grid-area: 1/3/3/4;
     margin: $item-margin;
@@ -107,6 +115,10 @@ export default {
     text-decoration: none;
     color: black;
     @include center-content();
+  }
+  button:last-of-type {
+    grid-area: 3/3/4/4;
+    @extend %button-shared;
   }
 }
 
