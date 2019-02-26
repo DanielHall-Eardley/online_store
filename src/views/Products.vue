@@ -55,7 +55,7 @@ export default {
   computed: {
     productData() {
       return this.$store.state.products.productData;
-    }
+  }
   },
   methods: {
     getDetail: function(item) {

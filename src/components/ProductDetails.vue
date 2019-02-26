@@ -91,6 +91,10 @@ span {
   background: lightblue;
   padding: 10px 2%;
   border-radius: 8px;
+  span, button{
+    width: 100% / 4;
+  }
+  
 }
 </style>
 
