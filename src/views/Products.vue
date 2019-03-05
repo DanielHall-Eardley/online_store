@@ -57,8 +57,8 @@ export default {
       return this.$store.state.products.productData;
   }
   },
-  methods: {
-    getDetail: function(item) {
+    methods: {
+    getDetail: function (item) {
       this.itemDetails = item;
       item.showDetails = !item.showDetails
     }
@@ -75,6 +75,7 @@ export default {
   background: lightgrey;
   padding: 2%;
   overflow-y: scroll;
+  @include scrollbar();
 }
 
 .list-item {

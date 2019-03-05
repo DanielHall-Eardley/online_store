@@ -9,8 +9,7 @@
         </button>
         <transition appear name="dropdown">
           <div class="dropdown" v-show="menu.toggle">
-            <a class="menu-links" 
-              v-for= "link in menu.links" 
+            <a v-for= "link in menu.links" 
               v-bind:href="link.url">
               {{link.product}}
             </a>
@@ -45,29 +44,33 @@
     @include mediaQ(600px){
       grid-area: 2/1/3/4;
     }
+    z-index: 1;
   }
  
   .menu-container{
     display:flex;
     height: 100%;
     padding: 0%;
+    
   }
   .menu-title{
-    flex: auto;
+    flex: 1;
   }
   .menu-button{
     width: 100%;
     height: 100%;
     background:coral;
-    border: 0.2px solid black
+    border: 0.2px solid rgb(167, 243, 132)
   }
-  .menu-links{
-    display:block;
-  }
+  
   .dropdown{
     background-color: lightsalmon;
     padding: 4%;
+    a{
+      display: block;
+    }
   }
+
   
   .dropdown-enter-active{
     animation: enter 0.5s ease;

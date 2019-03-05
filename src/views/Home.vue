@@ -47,7 +47,7 @@ export default {
   }, 
   computed:{
     customProductName(){
-      return this.$store.state.products.customProduct.name
+      return this.$store.state.shopConfig.customProductName
     },
     slideshowData(){
       return this.$store.state.products.featuredSlideshow
@@ -58,6 +58,11 @@ export default {
 
 <style lang="scss">
 @import '@/globalStyles/mixins.scss';
+
+:root{
+  --main-background: rgb(166, 229, 160)
+}
+
 header{
   display:grid;
   grid-template-rows: 12vh 6vh;
@@ -91,5 +96,9 @@ header{
 
 .footer{
   width: 100%;
+}
+
+body{
+  @include scrollbar()
 }
 </style>

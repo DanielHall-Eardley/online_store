@@ -1,23 +1,47 @@
-@mixin mediaQ ($width){
-    @media screen and (max-width: $width){
-      @content
+@mixin mediaQ ($width) {
+    @media screen and (max-width: $width) {
+        @content
     };
-  }
+}
 
-@mixin center-content(){
+@mixin center-content() {
     text-align: center;
     align-self: center;
 }
 
-@mixin standard-button($color, $active-color){
+@mixin standard-button($color, $active-color) {
     background: $color;
     opacity: 0.5;
-    &:hover{
+
+    &:hover {
         transition: opacity 0.5 linear;
         opacity: 1;
     }
-    &:active{
+
+    &:active {
         background: $active-color;
     }
 
+}
+
+@mixin scrollbar() {
+    &::-webkit-scrollbar {
+        width: 10px;
+    }
+
+    &::-webkit-scrollbar-track {
+        background: lightblue;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background: mediumblue;
+    }
+}
+
+@mixin clearfix(){
+    &:after{
+        content:"";
+        clear: both;
+        display: block;
+    }
 }

@@ -17,7 +17,7 @@ let shopConfig = {
         toggle: false,
         order: 1,
         links: [{
-            url: '/home',
+            url: '/',
             product: 'Home'
           },
           {
@@ -69,7 +69,32 @@ let shopConfig = {
           }
         ],
       }
-    ]
+    ],
+    customProductName: "build a computer",
+    customSetUp: {
+      customSteps: [{
+          name: "Pick computer case",
+          order: 1,
+          optionArray: []
+        },
+        {
+          name: "Pick computer cpu",
+          order: 2,
+        },
+        {
+          name: "Pick computer motherboard",
+          order: 3,
+        },
+        {
+          name: "Pick computer cooling",
+          order: 4,
+        },
+        {
+          name: "Pick computer gpu",
+          order: 1,
+        },
+      ]
+    }
   },
   mutations: {
     toggleMenu: (state, event) => {

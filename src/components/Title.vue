@@ -9,7 +9,6 @@
 
 #title-container {
   text-align: center;
-  background: sandybrown;
   padding: 5px 1%;
   @include mediaQ(600px){
     grid-area:1/2/2/3;

@@ -1,7 +1,6 @@
 <template> 
 <div>
-  <input v-model="input"/>
-  <button v-on:click.prevent="handleInput()">Submit</button>
+  <input placeholder="search for products" v-model="input"/>
 </div>
 </template>
 
@@ -27,17 +26,18 @@
     grid-column: 3/4;
     grid-row: 2/3;
     display: flex;
-    justify-content: center;
-    align-content: center;
     @include mediaQ(600px){
       grid-area: 3/1/4/4;
       
     }
   }
   input{
-    border: solid 0.5px black;
+    border: none;
+    padding: 5px;
+    background: lightblue;
+    flex: 1
   }
   button{
-    
+     
   }
 </style>

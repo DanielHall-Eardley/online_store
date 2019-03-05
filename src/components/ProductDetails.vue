@@ -39,10 +39,10 @@
         </span>
       </div>
       <div id="product-info">
-        <span>Price: ${{item.price}}</span>
-        <span>In Stock: {{item.inStock === true? "Yes" : "No"}}</span>
+        <span><b>Price:</b> ${{item.price}}</span>
+        <span><b>In Stock:</b> {{item.inStock === true? "Yes" : "No"}}</span>
         <button>Buy</button>
-        <button v-on:click="backToList(item)">Back</button>
+        <button v-on:click="backToList(item)">Hide Details</button>
       </div>
     </div>
   </div>
@@ -66,6 +66,8 @@ export default {
 </script>
 
 <style lang="scss">
+@import "@/globalStyles/mixins.scss";
+
 #product-details {
   width: 100%;
 }
@@ -87,12 +89,13 @@ span {
 }
 
 #product-info{
+  display: flex;
   margin: 2% 0%;
   background: lightblue;
   padding: 10px 2%;
   border-radius: 8px;
   span, button{
-    width: 100% / 4;
+    flex: 1
   }
   
 }
