@@ -60,7 +60,12 @@ export default {
 @import '@/globalStyles/mixins.scss';
 
 :root{
-  --main-background: rgb(166, 229, 160)
+  --main-background: rgb(166, 229, 160);
+  --item-background: lightgrey;
+  --border-rad: 10px;
+  --item-division: 10px;
+  --border-highlighted: solid 2px aqua;
+  --border-div: solid black 1px;
 }
 
 header{
@@ -77,6 +82,7 @@ header{
 #main-body{
   display: block;
   height: 50vh;
+  background: var(--main-background)
 }
 
 #store-description{
@@ -91,7 +97,7 @@ header{
   background:chartreuse;
   text-align: center;
   width: 50%;
-  border-radius: 6px;
+  border-radius: var(--border-rad)
 }
 
 .footer{

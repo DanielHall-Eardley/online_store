@@ -36,7 +36,7 @@
     grid-column: 1/2;
     grid-row: 1/3;
     padding: 15px;
-    border-right: solid black 1px
+    border-right: var(--border-div)
   }
   #links-container{
     display:flex;
@@ -44,7 +44,7 @@
     grid-column: 2/3;
     grid-row: 1/2;
     padding: 15px;
-    border-bottom: solid black 1px
+    border-bottom: var(--border-div)
   }
   #logo-copyright-container{
     grid-column: 2/3;

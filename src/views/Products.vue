@@ -73,15 +73,23 @@ export default {
 #products-section {
   height: 50vh;
   background: lightgrey;
-  padding: 2%;
+  padding: var(--item-division);
   overflow-y: scroll;
   @include scrollbar();
+  background: var(--main-background)
+}
+
+#product-list{
 }
 
 .list-item {
   display: grid;
   grid-template-columns: 1fr 1fr 0.5fr;
   grid-template-rows: 40px 60px 5vh;
+  background: var(--item-background);
+  padding: var(--item-division);
+  border-radius: var(--border-rad);
+  margin-bottom: var(--item-division);
   h3 {
     grid-area: 1/1/2/3;
     margin: $item-margin;

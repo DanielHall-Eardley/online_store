@@ -12,6 +12,7 @@
     <main id="custom-section">
       <div id="steps">
         <button
+          :key="step.name"
           v-bind:style="{order: step.order}"
           v-for="step in customSetUp.customSteps"
         >{{step.name}}</button>
@@ -22,7 +23,8 @@
       <div id="options">
         <div
           v-for="item in productData"
-          class="option"
+          v-bind:key="item.id"
+          v-bind:class="highlightBorder(item.id)"
           v-on:click="showSelectedDetails(item)"
           v-bind:style="styleObject(item)"
         >
@@ -89,6 +91,13 @@ export default {
         item.showDetails = !item.showDetails;
         this.itemDetails = item;
       }
+    },
+    highlightBorder(id) {
+      if (id === this.itemDetails.id) {
+        return "option border-highlight";
+      } else {
+        return "option";
+      }
     }
   }
 };
@@ -101,42 +110,44 @@ export default {
   display: grid;
   grid-template-columns: 100%;
   grid-template-rows: auto auto 385.5px 30vh;
-  background: lightgray;
+  background: var(--main-background);
+  border-bottom: var(--border-div);
 }
 #steps {
   padding-bottom: 5px;
-  background: lightgreen;
+}
+
+#option-details {
+  margin: var(--item-division);
 }
 
 #steps button {
   border: 0.5px solid black;
   margin-left: 5px;
   margin-top: 5px;
-  border-radius: 5px;
+  border-radius: var(--border-rad);
   padding: 5px 3px;
 }
 
 #options {
   display: flex;
-  background: lightseagreen;
   overflow-x: scroll;
   padding: 12px;
   @include scrollbar();
+  border-bottom: var(--border-div);
 }
 
 .option {
   width: 350px;
-  border-radius: 10px;
+  border-radius: var(--border-rad);
   flex: 1 0 auto;
-  margin-right: 12px;
+  margin-right: var(--item-division);
   h3 {
     @include center-content();
   }
+}
 
-  div:last-of-type {
-    margin: 10px;
-    float: right;
-    @include clearfix();
-  }
+.border-highlight{
+  border: var(--border-highlighted)
 }
 </style>

@@ -69,7 +69,11 @@ export default {
 @import "@/globalStyles/mixins.scss";
 
 #product-details {
-  width: 100%;
+  background: var(--item-background);
+  padding: var(--item-division);
+  border-radius: var(--border-rad);
+  border: var(--border-highlighted);
+  margin-bottom: var(--item-division);
 }
 #img-container {
   float: right;
