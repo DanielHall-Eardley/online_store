@@ -45,3 +45,9 @@
         display: block;
     }
 }
+
+@mixin item-styles(){
+    padding: var(--item-division);
+    background: var(--item-background);
+    border-radius: var(--border-rad)
+}

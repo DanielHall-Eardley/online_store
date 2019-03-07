@@ -31,7 +31,9 @@
           <h3>{{item.name}}</h3>
         </div>
       </div>
-      <div id="total"></div>
+      <div id="total">
+        <CartTotal></CartTotal>
+      </div>
     </main>
     <footer class="footer">
       <Content></Content>
@@ -47,6 +49,7 @@ import Login from "@/components/Login.vue";
 import Content from "@/components/Footer.vue";
 import Menu from "@/components/Menu.vue";
 import Details from "@/components/ProductDetails.vue";
+import CartTotal from "@/components/CartTotal.vue"
 
 export default {
   components: {
@@ -56,7 +59,8 @@ export default {
     Login,
     Content,
     Menu,
-    Details
+    Details,
+    CartTotal
   },
   data() {
     return {
@@ -109,7 +113,7 @@ export default {
 #custom-section {
   display: grid;
   grid-template-columns: 100%;
-  grid-template-rows: auto auto 385.5px 30vh;
+  grid-template-rows: auto auto 385.5px 35vh;
   background: var(--main-background);
   border-bottom: var(--border-div);
 }
@@ -132,7 +136,7 @@ export default {
 #options {
   display: flex;
   overflow-x: scroll;
-  padding: 12px;
+  padding: var(--item-division);
   @include scrollbar();
   border-bottom: var(--border-div);
 }
@@ -145,6 +149,11 @@ export default {
   h3 {
     @include center-content();
   }
+}
+
+#total {
+  display: flex;
+  padding: var(--item-division)
 }
 
 .border-highlight{
